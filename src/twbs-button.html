@@ -4,47 +4,168 @@
 <!-- Define "container" custom element -->
 <polymer-element name="twbs-button" attributes="href tag type value style size block state disable bgcolor bdcolor txtcolor">
 
-  <template>
+  <template id="buttons">
 
     <!-- Tag "<a>" -->
     <template id="a" if="{{tag == 'a'}}">
-      <a href=""><content></content></p>
+      <a href="" class="btn" >
+        <content></content>
+      </a>
     </template>
 
     <template id="input" if="{{tag =='input'}}">
 
       <!-- Tag "<input>" -->
       <template id="submit" if="{{type =='submit'}}">
-        <input type="submit" value="{{value}}" />
+        <input class="btn" type="submit" value="{{value}}" />
       </template>
 
       <template id="button" if="{{type == 'button'}}">
-        <input type="button" value="{{value}}">
+        <input class="btn" type="button" value="{{value}}">
       </template>
 
     </template>
 
     <!-- Tag "<button>" -->
     <template id="button" if="{{tag == 'button'}}">
-      <button><content></content></button>
+      <button class="btn">
+        <content></content>
+      </button>
     </template>
+
+    <style>
+      .btn {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: normal;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-decoration: none;
+      }
+      .btn:focus,
+      .btn:active:focus,
+      .btn.active:focus {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+      }
+      .btn(:hover),
+      .btn(:focus) {
+        color: #333333;
+        text-decoration: none;
+      }
+      .btn:active,
+      .btn.active {
+        outline: 0;
+        background-image: none;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      }
+      .btn.disabled,
+      .btn[disabled],
+      fieldset[disabled] .btn {
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0.65;
+        filter: alpha(opacity=65);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .btn-default {
+        color: #333333;
+        background-color: #ffffff;
+        border-color: #cccccc;
+      }
+      .btn-default(:hover),
+      .btn-default(:focus),
+      .btn-default(:active),
+      .btn-default.active),
+      .open .dropdown-toggle.btn-default {
+        color: #333333;
+        background-color: #ebebeb;
+        border-color: #adadad;
+      }
+      .btn-primary {
+        color: #ffffff;
+        background-color: #428bca;
+        border-color: #357ebd;
+      }
+      .btn-primary:hover,
+      .btn-primary:focus,
+      .btn-primary:active,
+      .btn-primary.active,
+      .open .dropdown-toggle.btn-primary {
+        color: #ffffff;
+        background-color: #3276b1;
+        border-color: #285e8e;
+      }
+      .btn-primary:active,
+      .btn-primary.active,
+      .open .dropdown-toggle.btn-primary {
+        background-image: none;
+      }
+      .btn-primary.disabled,
+      .btn-primary[disabled],
+      fieldset[disabled] .btn-primary,
+      .btn-primary.disabled:hover,
+      .btn-primary[disabled]:hover,
+      fieldset[disabled] .btn-primary:hover,
+      .btn-primary.disabled:focus,
+      .btn-primary[disabled]:focus,
+      fieldset[disabled] .btn-primary:focus,
+      .btn-primary.disabled:active,
+      .btn-primary[disabled]:active,
+      fieldset[disabled] .btn-primary:active,
+      .btn-primary.disabled.active,
+      .btn-primary[disabled].active,
+      fieldset[disabled] .btn-primary.active {
+        background-color: #428bca;
+        border-color: #357ebd;
+      }
+      .btn-primary .badge {
+        color: #428bca;
+        background-color: #ffffff;
+      }
+    </style>
 
   </template>
 
   <script>
+    //var button = document.querySelector("twbs-button");
+    //var style = button.getAttribute("style");
     Polymer('twbs-button', {
-      href: "#",
-      tag : "button",
-      style : 'default',
-      type: "submit",
-      value: " Hello!",
-      size   : '',
-      block  : 'block',
-      state: '',
+      ready: function() {
+        var btn = this.shadowRoot.querySelector(".btn");
+        var style = this.getAttribute("style");
+        if (!style) {
+          btn.classList.add("btn-default");
+        } else {
+          btn.classList.add("btn-"+style);
+        }
+      },
+      href    : "#",
+      tag     : "button",
+      type    : "submit",
+      value   : " Hello!",
+      size    : '',
+      block   : 'block',
+      state   : '',
       disable : 'disable',
-      bgcolor: "#ebebeb",
-      bdcolor: "#adadad",
-      txtcolor: "#333333"
+      bgcolor : "#ebebeb",
+      bdcolor : "#adadad",
+      txtcolor: "#333333",
     });
   </script>
 
