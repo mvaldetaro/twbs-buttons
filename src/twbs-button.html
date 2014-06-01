@@ -64,6 +64,18 @@
           btn.classList.add("btn-block");
         }
 
+        //Attribute disabled
+        var state = this.getAttribute("state");
+        if (!state) {
+          // nothing
+        } else if (state == "disabled") {
+          btn.setAttribute("disabled","disabled");
+        } else if (state == "active") {
+          btn.setAttribute("active","active");
+        } else {
+          // nothing
+        }
+
       },
       href    : "#",
       tag     : "button",
@@ -71,7 +83,7 @@
       value   : " Hello!",
       size    : '',
       block   : '',
-      state   : ''
+      state   : '',
       bgcolor : "#ebebeb",
       bdcolor : "#adadad",
       txtcolor: "#333333",
