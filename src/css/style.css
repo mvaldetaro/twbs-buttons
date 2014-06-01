@@ -71,7 +71,7 @@ fieldset[disabled] .btn {
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
   background-image: none;
-}primary
+}
 .btn-default.disabled,
 .btn-default[disabled],
 fieldset[disabled] .btn-default,

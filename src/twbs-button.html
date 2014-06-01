@@ -43,21 +43,35 @@
     Polymer('twbs-button', {
       ready: function() {
         var btn = this.shadowRoot.querySelector(".btn");
+
+        //Attribute style
         var style = this.getAttribute("style");
         if (!style) {
           btn.classList.add("btn-default");
         } else {
           btn.classList.add("btn-"+style);
         }
+
+        //Attribute size
+        var size = this.getAttribute("size");
+        if (size) {
+          btn.classList.add("btn-"+size);
+        }
+
+        //Attribute block
+        var block = this.getAttribute("block");
+        if (block) {
+          btn.classList.add("btn-block");
+        }
+
       },
       href    : "#",
       tag     : "button",
       type    : "submit",
       value   : " Hello!",
       size    : '',
-      block   : 'block',
-      state   : '',
-      disable : 'disable',
+      block   : '',
+      state   : ''
       bgcolor : "#ebebeb",
       bdcolor : "#adadad",
       txtcolor: "#333333",
