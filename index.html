@@ -78,17 +78,65 @@
   </header>
   <div class="content">
     <!-- Using Custom Elements -->
-    <h2>Examples</h2>
-    <p><twbs-button tag="a" >a link</twbs-button></p>
-    <p><twbs-button tag="input" text="input submit" style="primary"></twbs-button></p>
-    <p><twbs-button tag="input" type="button" text="input button"></twbs-button></p>
-    <p><twbs-button tag="button" style="primary"> button </twbs-button></p>
+    <h2>Button types</h2>
+    <p><twbs-button tag="a">a Tag</twbs-button>
+    <twbs-button tag="input" value="input type=submit Tag"></twbs-button>
+    <twbs-button tag="input" type="button" value="input type=button Tag"></twbs-button>
+    <twbs-button tag="button"> button Tag </twbs-button></p>
 
+    <pre>
+      &lt;twbs-button tag="a"&gt; a Tag &lt;/twbs-button&gt;
+      &lt;twbs-button tag="input" value="input type=submit Tag"&gt; &lt;/twbs-button&gt;
+      &lt;twbs-button tag="input" type="button" value="input type=button Tag"&gt; &lt;/twbs-button&gt;
+      &lt;twbs-button tag="button"&gt; button Tag &lt;/twbs-button&gt;
+    </pre>
 
-    <h2>Options</h2>
+    <h2>Styles</h2>
     <p>Use any of the available button attributes to quickly create a styled button.</p>
+    <p>
+      <twbs-button style="default"> style="default" </twbs-button>
+      <twbs-button style="primary"> style="primary" </twbs-button>
+      <twbs-button style="success"> style="success" </twbs-button>
+      <twbs-button style="info"> style="info" </twbs-button>
+      <twbs-button style="warning"> style="warning" </twbs-button>
+      <twbs-button style="danger"> style="danger" </twbs-button>
+      <twbs-button style="link"> style="link" </twbs-button>
+    </p>
 
+    <h2>Styles</h2>
+    <p>Use any of the available button attributes to quickly create a styled button.</p>
+    <p>
+      <twbs-button style="default"> style="default" </twbs-button>
+      <twbs-button style="primary"> style="primary" </twbs-button>
+      <twbs-button style="success"> style="success" </twbs-button>
+      <twbs-button style="info"> style="info" </twbs-button>
+      <twbs-button style="warning"> style="warning" </twbs-button>
+      <twbs-button style="danger"> style="danger" </twbs-button>
+      <twbs-button style="link"> style="link" </twbs-button>
+    </p>
 
+    <h2>Sizes</h2>
+    <p>Add size="lg", size="sm", or size="xs" for additional sizes.</p>
+      <p>
+        <twbs-button style="primary" size="lg"> size="lg" </twbs-button>
+        <twbs-button style="primary"> default </twbs-button>
+        <twbs-button style="primary" size="sm"> size="sm" </twbs-button>
+        <twbs-button style="primary" size="xs"> size="xs" </twbs-button>
+      </p>
+
+    <h2>Block</h2>
+    <p>Create block level buttons—those that span the full width of a parent—by adding block="block"</p>
+    <p>
+      <twbs-button style="primary" size="lg" block="block"> style="primary" size="lg" block="block" </twbs-button>
+      <twbs-button block="block"> default block="block" </twbs-button>
+    </p>
+
+    <h2>State</h2>
+    <p>Create block level buttons—those that span the full width of a parent—by adding block="block"</p>
+    <p>
+      <twbs-button style="primary" size="lg" block="block" state="active"> state="active" </twbs-button>
+      <twbs-button style="primary" size="lg" block="block" state="disabled"> state="disabled" </twbs-button>
+    </p>
   </div>
   <footer>
     <div class="content">
